@@ -7,7 +7,7 @@
   "hours": [
     { "days": "Monday – Friday", "time": "7:00 am – 7:00 pm" },
     { "days": "Saturday", "time": "8:00 am – 8:00 pm" },
-    { "days": "Sunday", "time": "8:00 am – 2:00 pm" }
+    { "days": "Sunday", "time": "8:00 am – 4:00 pm" }
   ],
   "social": {
     "instagram": "https://instagram.com/lunacafe.example"
