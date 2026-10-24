@@ -1,0 +1,30 @@
+---
+import business from '../data/business.json';
+import { url } from '../lib/url';
+---
+
+<section class="hero">
+  <div class="container">
+    <h1>{business.tagline}</h1>
+    <p>
+      A neighborhood café on Main Street. We roast our beans every week and bake
+      everything in-house, from sourdough to cinnamon rolls.
+    </p>
+    <a class="button" href={url('menu/')}>See the menu</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #f3e6d6, var(--color-bg));
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    max-width: 20ch;
+  }
+  .hero p {
+    max-width: 50ch;
+    color: var(--color-muted);
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+import business from '../data/business.json';
+---
+
+<section id="visit" class="hours">
+  <div class="container">
+    <h2>Visit us</h2>
+    <p>{business.address}</p>
+    <table>
+      <tbody>
+        {
+          business.hours.map((row) => (
+            <tr>
+              <th scope="row">{row.days}</th>
+              <td>{row.time}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    padding: 0.5rem 1.5rem 0.5rem 0;
+    text-align: left;
+  }
+</style>

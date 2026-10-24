@@ -1,0 +1,44 @@
+---
+const reviews = [
+  { author: 'Maria G.', text: 'The best cappuccino in town and the staff remembers my name.' },
+  { author: 'Daniel R.', text: 'I come every Saturday for the morning buns. Always fresh.' },
+  { author: 'Priya S.', text: 'Quiet, cozy and great Wi-Fi. My favorite place to work.' },
+];
+---
+
+<section class="reviews">
+  <div class="container">
+    <h2>What our guests say</h2>
+    <div class="grid">
+      {
+        reviews.map((review) => (
+          <blockquote>
+            <p>“{review.text}”</p>
+            <cite>— {review.author}</cite>
+          </blockquote>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    background: #f3e6d6;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+  }
+  blockquote {
+    margin: 0;
+    padding: 1.5rem;
+    background: var(--color-bg);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0.5rem;
+  }
+  cite {
+    color: var(--color-muted);
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const menu = [
+  {
+    category: 'Coffee',
+    items: [
+      { name: 'Espresso', price: '$3.00' },
+      { name: 'Cappuccino', price: '$4.50' },
+      { name: 'Honey Oat Latte', price: '$5.25' },
+      { name: 'Cold Brew', price: '$4.75' },
+    ],
+  },
+  {
+    category: 'Bakery',
+    items: [
+      { name: 'Butter Croissant', price: '$3.75' },
+      { name: 'Morning Bun', price: '$4.00' },
+      { name: 'Sourdough Loaf', price: '$8.00' },
+    ],
+  },
+  {
+    category: 'Breakfast',
+    items: [
+      { name: 'Avocado Toast', price: '$9.50' },
+      { name: 'Yogurt & Granola Bowl', price: '$7.25' },
+    ],
+  },
+];
+---
+
+<Layout title="Menu" description="Coffee, pastries and breakfast at Luna Café.">
+  <section>
+    <div class="container">
+      <h1>Menu</h1>
+      {
+        menu.map((group) => (
+          <div class="group">
+            <h2>{group.category}</h2>
+            <ul>
+              {group.items.map((item) => (
+                <li>
+                  <span>{item.name}</span>
+                  <span>{item.price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 32rem;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--color-muted);
+  }
+</style>

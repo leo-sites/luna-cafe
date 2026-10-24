@@ -1,0 +1,42 @@
+---
+const specials = [
+  { name: 'Honey Oat Latte', description: 'Espresso, oat milk and local honey.', price: '$5.25' },
+  { name: 'Morning Bun', description: 'Laminated dough with orange zest and cinnamon sugar.', price: '$4.00' },
+  { name: 'Avocado Toast', description: 'Sourdough, smashed avocado, chili flakes and lime.', price: '$9.50' },
+];
+---
+
+<section class="specials">
+  <div class="container">
+    <h2>This week's favorites</h2>
+    <ul>
+      {
+        specials.map((item) => (
+          <li>
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+            <strong>{item.price}</strong>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.5rem;
+  }
+  li {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+  li p {
+    color: var(--color-muted);
+  }
+</style>
